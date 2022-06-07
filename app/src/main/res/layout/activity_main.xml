@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="254dp"
+        android:layout_height="62dp"
+        android:text="emojichat"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@id/loginMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/appLogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="todo"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/loginMessage"
+        app:layout_constraintEnd_toStartOf="@+id/appName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/message1_foreground" />
+
+    <EditText
+        android:id="@+id/usernameEdit"
+        android:layout_width="317dp"
+        android:layout_height="67dp"
+        android:inputType="text"
+        android:labelFor="@id/loginMessage"
+        app:layout_constraintBottom_toTopOf="@+id/message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginMessage"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/message"
+        android:layout_width="189dp"
+        android:layout_height="48dp"
+        android:onClick="sendSticker"
+        android:text="login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usernameEdit"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/loginMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login_to_message_emoji_to_your_friends"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/usernameEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
