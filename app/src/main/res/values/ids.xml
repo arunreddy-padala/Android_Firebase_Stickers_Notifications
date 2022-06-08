@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="grinning" type="id" />
+    <item name="hearts" type="id" />
+    <item name="laugh" type="id" />
+    <item name="pouting" type="id" />
+    <item name="friends" type="id" />
+    <item name="history" type="id" />
+    <item name="countSmile" type="id" />
+    <item name="countHeart" type="id" />
+    <item name="countLaugh" type="id" />
+    <item name="countPout" type="id" />
+    <item name="logout" type="id" />
+    <item name="loggedInUser" type="id" />
+    <item name="sentTime" type="id" />
+    <item name="from" type="id" />
+    <item name="stickerTitle" type="id" />
+</resources>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendStickers">
+
+    <ImageView
+        android:id="@+id/grinning"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="smile"
+        android:onClick="sendSmile"
+        app:layout_constraintBottom_toTopOf="@id/friends"
+        app:layout_constraintEnd_toStartOf="@id/hearts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/grinning"
+        tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/hearts"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="hearts"
+        android:onClick="sendHearts"
+        app:layout_constraintBottom_toTopOf="@+id/friends"
+        app:layout_constraintEnd_toStartOf="@+id/laugh"
+        app:layout_constraintStart_toEndOf="@+id/grinning"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hearts"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/laugh"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="cry_laughing"
+        android:onClick="sendLaugh"
+        app:layout_constraintBottom_toTopOf="@+id/friends"
+        app:layout_constraintEnd_toStartOf="@id/pouting"
+        app:layout_constraintStart_toEndOf="@id/hearts"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/laugh"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/pouting"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="pouting"
+        android:onClick="sendPout"
+        app:layout_constraintBottom_toTopOf="@id/friends"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/laugh"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pouting"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/friends"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="SpinnerValue1"
+        app:layout_constraintBottom_toTopOf="@id/history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/countSmile" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="250dp"
+        android:minHeight="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/countSmile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sent_0"
+        app:layout_constraintBottom_toTopOf="@id/friends"
+        app:layout_constraintEnd_toEndOf="@id/grinning"
+        app:layout_constraintStart_toStartOf="@id/grinning"
+        app:layout_constraintTop_toBottomOf="@+id/grinning" />
+
+    <TextView
+        android:id="@+id/countHeart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sent_0"
+        app:layout_constraintBottom_toTopOf="@id/friends"
+        app:layout_constraintEnd_toEndOf="@id/hearts"
+        app:layout_constraintStart_toStartOf="@id/hearts"
+        app:layout_constraintTop_toBottomOf="@id/hearts" />
+
+    <TextView
+        android:id="@+id/countLaugh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sent_0"
+        app:layout_constraintBottom_toTopOf="@id/friends"
+        app:layout_constraintEnd_toEndOf="@id/laugh"
+        app:layout_constraintStart_toStartOf="@id/laugh"
+        app:layout_constraintTop_toBottomOf="@id/laugh" />
+
+    <TextView
+        android:id="@+id/countPout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sent_0"
+        app:layout_constraintBottom_toTopOf="@id/friends"
+        app:layout_constraintEnd_toEndOf="@id/pouting"
+        app:layout_constraintStart_toStartOf="@id/pouting"
+        app:layout_constraintTop_toBottomOf="@id/pouting" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:onClick="logOutClick"
+        android:text="log_out"
+        app:layout_constraintBottom_toTopOf="@+id/history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/friends"
+        app:layout_constraintTop_toBottomOf="@id/countSmile" />
+
+    <TextView
+        android:id="@+id/loggedInUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="loggedinuser"
+        app:layout_constraintBottom_toTopOf="@id/history"
+        app:layout_constraintEnd_toStartOf="@id/friends"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/countSmile" />
+
+    <TextView
+        android:id="@+id/sentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:text="sent_time"
+        app:layout_constraintBottom_toTopOf="@id/history"
+        app:layout_constraintEnd_toStartOf="@id/from"
+        app:layout_constraintStart_toStartOf="@id/history"
+        app:layout_constraintTop_toBottomOf="@id/friends" />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="from"
+        app:layout_constraintBottom_toTopOf="@id/history"
+        app:layout_constraintEnd_toStartOf="@+id/stickerTitle"
+        app:layout_constraintStart_toEndOf="@id/sentTime"
+        app:layout_constraintTop_toBottomOf="@id/friends" />
+
+    <TextView
+        android:id="@+id/stickerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="sticker"
+        app:layout_constraintBottom_toTopOf="@id/history"
+        app:layout_constraintStart_toEndOf="@id/from"
+        app:layout_constraintTop_toBottomOf="@id/friends" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
